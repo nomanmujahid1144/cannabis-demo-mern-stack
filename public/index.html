@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <meta name="keywords" content="AJAX, CLARINGTON, PICKERING, SCUGOG, UXBRIDGE, WHITBY, NEWCASTLE, OSHAWA, VAUGHAN, TORONTO, ETOBICOKE, NORTH YORK, PICKERING, MARKHAM, NEWMARKET, KING, SCARBOROUGH, GORMLEY, AURORA, YORK, RICHMOND HILL ON, Weed Delivery Toronto, Weed Delivery Downtown Toronto, Weed Delivery North York, Weed Delivery Willowdale, Weed Delivery Lawrence Park, Weed Delivery Etobicoke, Weed Delivery Scarborough, Weed Delivery East York, Weed Delivery Vaughan, Weed Delivery Richmond Hill, Weed Delivery Markham, Weed Delivery Mississauga, Weed Delivery Brampton" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" /> -->
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Cannabis Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <div id="root"></div>
+    <div id="portal"></div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('server-worker.js').then(function(registration) {
+            console.log(registration.scope ,'registration.scope')
+            console.log('Worker registration successful', registration.scope);
+          }, function(err) {
+            console.log('Worker registration failed', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
+    <!-- <script>
+      // Register the service worker
+      function registerServiceWorker() {
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
+            const swUrl = `${publicUrl}service-worker.js`;
+
+            if (isLocalhost) {
+              // This is running on localhost. Let's check if a service worker still exists or not.
+              checkValidServiceWorker(swUrl);
+            } else {
+              // Is not localhost. Just register service worker
+              registerValidSW(swUrl);
+            }
+          });
+        }
+      }
+
+      // Check if the service worker is still valid or reload the page
+      function checkValidServiceWorker(swUrl) {
+        fetch(swUrl)
+          .then((response) => {
+            if (
+              response.status === 404 ||
+              response.headers.get('content-type').indexOf('javascript') === -1
+            ) {
+              // No service worker found. Probably a different app. Reload the page.
+              navigator.serviceWorker.ready.then((registration) => {
+                registration.unregister().then(() => {
+                  window.location.reload();
+                });
+              });
+            } else {
+              // Service worker found. Proceed as normal.
+              registerValidSW(swUrl);
+            }
+          })
+          .catch(() => {
+            console.log('No internet connection found. App is running in offline mode.');
+          });
+      }
+
+      // Register the valid service worker
+      function registerValidSW(swUrl) {
+        navigator.serviceWorker
+          .register(swUrl)
+          .then(() => {
+            console.log('Service worker registered successfully.');
+          })
+          .catch((error) => {
+            console.error('Error during service worker registration:', error);
+          });
+      }
+
+      // Call the function to register the service worker
+      registerServiceWorker();
+    </script> -->
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="https://sdk.berbix.com/latest/berbix-verify.js"></script>
+  </body>
+  
+</html>
